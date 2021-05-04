@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
 const program = require("commander");
+const validateArguments = require("./src/helpers/validateArguments.js");
 
 program
   .option("-s --shift <value>", "Shift value for coding")
@@ -9,4 +9,4 @@ program
   .option("-o, --output <value>", "An output file")
   .parse(process.argv);
 
-console.log(process.argv);
+validateArguments(process.argv.slice(2));
