@@ -1,11 +1,8 @@
 {
-  "name": "caesar-cipher-cli-tool",
+  "name": "caesar",
   "version": "1.0.0",
   "description": "Caesar cipher CLI tool for The RSS",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "caesar/index.js",
   "keywords": [
     "CLI",
     "Caesar",
@@ -14,5 +11,8 @@
     "nodejs"
   ],
   "author": "Darya Tsimashenkava <@besovadevka>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
 }
