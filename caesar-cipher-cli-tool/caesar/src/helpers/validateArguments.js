@@ -36,12 +36,12 @@ const validateAction = (aArg, actionArg, aValue, actionValue) => {
 
 const validateInputFile = (iFileIndex, inputFileIdex) => {
   if (iFileIndex === -1 && inputFileIdex === -1) {
-    process.stdout.write("Enter path to input file\n");
+    process.stdout.write("Enter message:\n");
     process.stdin.setEncoding("utf8");
     process.stdin.on("readable", function () {
       const chunk = process.stdin.read();
       if (chunk !== null) {
-        process.argv.push("-i", chunk);
+        process.argv.push("message", chunk);
       }
     });
     process.stdin.on("end", function () {
