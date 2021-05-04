@@ -3,7 +3,7 @@ const validateShift = (sArg, shiftArg, sValue, shiftValue) => {
     process.stderr.write(
       "Error: Shift is missed! Try again with -s or --shift"
     );
-    process.exit(4);
+    process.exit(9);
   }
   if (
     (sArg !== -1 && +sValue !== +sValue) ||
@@ -12,7 +12,7 @@ const validateShift = (sArg, shiftArg, sValue, shiftValue) => {
     process.stderr.write(
       "Error: Shift value is missed! Try again with a number"
     );
-    process.exit(4);
+    process.exit(9);
   }
 };
 
@@ -21,7 +21,7 @@ const validateAction = (aArg, actionArg, aValue, actionValue) => {
     process.stderr.write(
       "Error: Action is missed! Try again with -a or --action"
     );
-    process.exit(4);
+    process.exit(9);
   }
   if (
     (aArg !== -1 && aValue !== "encode" && aValue !== "decode") ||
@@ -30,7 +30,23 @@ const validateAction = (aArg, actionArg, aValue, actionValue) => {
     process.stderr.write(
       "Error: Action value is missed! Try again with encode or decode values"
     );
-    process.exit(4);
+    process.exit(9);
+  }
+};
+
+const validateInputFile = (iFileIndex, inputFileIdex) => {
+  if (iFileIndex === -1 && inputFileIdex === -1) {
+    process.stdout.write("Enter path to input file\n");
+    process.stdin.setEncoding("utf8");
+    process.stdin.on("readable", function () {
+      const chunk = process.stdin.read();
+      if (chunk !== null) {
+        process.argv.push("-i", chunk);
+      }
+    });
+    process.stdin.on("end", function () {
+      process.stdout.write("end");
+    });
   }
 };
 
@@ -47,6 +63,7 @@ const validateArguments = (args) => {
     args[args.indexOf("-a") + 1],
     args[args.indexOf("--action") + 1]
   );
+  validateInputFile(args.indexOf("-i"), args.indexOf("--input"));
 };
 
 module.exports = validateArguments;
