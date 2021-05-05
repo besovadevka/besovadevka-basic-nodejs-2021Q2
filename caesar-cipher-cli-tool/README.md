@@ -1,7 +1,12 @@
-# Welcome to Caesar Cipher!
-## The CLI Tool for encode or decode you messages.  
+# Welcome to Caesar Cipher CLI!
+## The CLI Tool for encode or decode you messages.   
+&nbsp;
+> ### "The die is cast!"  
 
-To check this CLI tool you need:
+#### Gaius Julius Caesar — Roman statesman and politician, general, writer.  
+&nbsp;  
+
+To check this CLI tool you need:  
 
 1. Clone or fork this repository  
 1.1 To clone write in terminal:  
@@ -13,6 +18,8 @@ cd caesar-cipher-cli-tool
 npm i  
 4. Write your own commands to caesar CLI!  
 For example: node caesar -s 18 -a encode  
+
+### Remember! You must refer to the program through the name "caesar".  
 
 Notes:
 1. Valid options are:  
@@ -26,7 +33,8 @@ encoded.txt
 plain.txt  
 3. If you forget about --input argument you can write you message in the terminal line.
 4. If you forget about --output argument you will see encoded or decoded message in the terminal line.
-5. Only English letters will be encoded or decoded.
+5. Only English letters will be encoded or decoded.  
 
+&nbsp;
 ##### For The Rolling Scopes School course with ♥
 ##### Author: Darya Tsimashenkava<@besovadevka>
