@@ -15,11 +15,13 @@ git clone https://github.com/besovadevka/besovadevka-basic-nodejs-2021Q2.git
 1.2 You can also clone only the needed branch, just write in the terminal:  
 git clone https://github.com/besovadevka/besovadevka-basic-nodejs-2021Q2.git -b caesar-cipher-cli-tool  
 1.3 To fork press the fork button on Github.  
-2. Move to caesar-cipher-cli-tool folder through the terminal:  
+2. Move to besovadevka-basic-nodejs-2021Q2 directory through the terminal:  
+cd besovadevka-basic-nodejs-2021Q2    
+3. Then move to the caesar-cipher-cli-tool directory:  
 cd caesar-cipher-cli-tool  
-3. Install all dependencies:  
+4. Install all dependencies:  
 npm i  
-4. Write your own commands to caesar CLI!  
+5. Write your own commands to caesar CLI!  
 For example: node caesar -s 18 -a encode  
 
 ### Remember! You must refer to the program through the name "caesar".  
