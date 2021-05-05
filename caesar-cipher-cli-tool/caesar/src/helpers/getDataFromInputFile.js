@@ -1,7 +1,5 @@
 const fs = require("fs");
-const getArgsValue = require("./getArgsValues");
-const codeMessage = require("./codeInputFile");
-const writeInOutputFile = require("./writeInOutputFile");
+const codeProcess = require("./codeProcess");
 
 const getDataFromInputFile = (index) => {
   const additionalIndexToGetInputFile = 3;
@@ -11,10 +9,7 @@ const getDataFromInputFile = (index) => {
       process.stderr.write("Error: no such file or directory!");
       process.exit(9);
     }
-    const shiftValue = getArgsValue("-s", "--shift");
-    const actionValue = getArgsValue("-a", "--action");
-    const newMessage = codeMessage(shiftValue, data, actionValue);
-    writeInOutputFile(newMessage);
+    codeProcess(data);
   });
 };
 

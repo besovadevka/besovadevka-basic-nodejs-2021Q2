@@ -1,4 +1,5 @@
 const getDataFromInputFile = require("./getDataFromInputFile");
+const codeProcess = require("./codeProcess");
 
 const validateShift = (sArg, shiftArg, sValue, shiftValue) => {
   if (sArg === -1 && shiftArg === -1) {
@@ -43,7 +44,7 @@ const validateInputFile = (iFileIndex, inputFileIdex) => {
     process.stdin.once("readable", function () {
       const chunk = process.stdin.read();
       if (chunk !== null) {
-        process.argv.push("message", chunk);
+        codeProcess(chunk);
       }
     });
   } else {
