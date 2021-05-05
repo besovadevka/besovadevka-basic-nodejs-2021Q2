@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require("commander");
-const validateArguments = require("./src/helpers/validateArguments.js");
+const validateArguments = require("./src/helpers/validation.js");
 
 program
   .option("-s --shift <value>", "Shift value for coding")
