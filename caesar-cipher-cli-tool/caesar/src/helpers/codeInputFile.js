@@ -53,7 +53,7 @@ const codeMessage = (shift, str, code) => {
   let res = "";
   for (let i = 0; i < str.length; i++) {
     const isCharLower = str[i].toLowerCase() === str[i];
-    const currentShift = shift % alp.length;
+    const currentShift = Math.trunc(shift) % alp.length;
     const charIndex = alp.indexOf(str[i].toLowerCase());
     const newIndex =
       code === "decode"
