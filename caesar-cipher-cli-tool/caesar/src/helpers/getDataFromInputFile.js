@@ -51,9 +51,8 @@ const getDataFromInputFile = () => {
     getTransformStream(shiftValue, actionValue),
     getWriteStream(outputFileName),
     (error) => {
-      console.log(error);
       if (error) {
-        process.stdout.write("Error: Something went wrong! Try again");
+        process.stderr.write("Error: Something went wrong! Try again");
         process.exit(1);
       }
     }
