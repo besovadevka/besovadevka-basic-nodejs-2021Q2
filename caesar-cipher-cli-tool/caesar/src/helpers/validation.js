@@ -1,6 +1,3 @@
-const getDataFromInputFile = require("./getDataFromInputFile");
-const codeProcess = require("./codeProcess");
-
 const validateShift = (sArg, shiftArg, sValue, shiftValue) => {
   if (sArg === -1 && shiftArg === -1) {
     process.stderr.write(
@@ -37,21 +34,6 @@ const validateAction = (aArg, actionArg, aValue, actionValue) => {
   }
 };
 
-const validateInputFile = (iFileIndex, inputFileIdex) => {
-  if (iFileIndex === -1 && inputFileIdex === -1) {
-    process.stdout.write("Enter message:\n");
-    process.stdin.setEncoding("utf8");
-    process.stdin.once("readable", function () {
-      const chunk = process.stdin.read();
-      if (chunk !== null) {
-        codeProcess(chunk);
-      }
-    });
-  } else {
-    getDataFromInputFile(iFileIndex === -1 ? inputFileIdex : iFileIndex);
-  }
-};
-
 const validateArguments = (args) => {
   validateShift(
     args.indexOf("-s"),
@@ -65,7 +47,6 @@ const validateArguments = (args) => {
     args[args.indexOf("-a") + 1],
     args[args.indexOf("--action") + 1]
   );
-  validateInputFile(args.indexOf("-i"), args.indexOf("--input"));
 };
 
 module.exports = validateArguments;

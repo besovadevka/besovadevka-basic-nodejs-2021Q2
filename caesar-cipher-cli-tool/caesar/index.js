@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const program = require("commander");
 const validateArguments = require("./src/helpers/validation.js");
+const getDataFromInputFile = require("./src/helpers/getDataFromInputFile");
 
 program
   .option("-s --shift <value>", "Shift value for coding")
@@ -10,3 +11,5 @@ program
   .parse(process.argv);
 
 validateArguments(process.argv.slice(2));
+
+getDataFromInputFile();

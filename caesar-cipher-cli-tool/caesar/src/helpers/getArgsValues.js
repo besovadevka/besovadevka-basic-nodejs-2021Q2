@@ -3,8 +3,7 @@ const getArgsValue = (shortArgName, argName) => {
     process.argv.indexOf(shortArgName) === -1
       ? process.argv.indexOf(argName)
       : process.argv.indexOf(shortArgName);
-
-  return process.argv[indexOfArg + 1];
+  return indexOfArg !== -1 ? process.argv[indexOfArg + 1] : null;
 };
 
 module.exports = getArgsValue;
