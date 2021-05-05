@@ -13,14 +13,18 @@ const getReadStream = (path) => {
     return readStream;
   } else {
     process.stdout.write("Enter message:\n");
-    return process.stdin.once("data", () => process.stdin.unref());
+    return process.stdin.on("data", () =>
+      setImmediate(() =>
+        process.stdout.write("Enter new message or 'Ctrl + C' to exit:\n")
+      )
+    );
   }
 };
 
 const getTransformStream = (shiftValue, actionValue) => {
   return new Transform({
     transform(chunk, encoding, callback) {
-      process.stdout.write("Data is written\n");
+      process.stdout.write("Data is written.\n");
       this.push(codeMessage(shiftValue, chunk.toString(), actionValue));
       callback();
     },
@@ -36,6 +40,7 @@ const getWriteStream = (path) => {
 };
 
 const getDataFromInputFile = () => {
+  process.stdout.write("Welcome to CLI Caesar cipher!\n");
   const pathName = getArgsValue("-i", "--input");
   const outputFileName = getArgsValue("-o", "--output");
   const shiftValue = getArgsValue("-s", "--shift");
