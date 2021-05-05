@@ -31,9 +31,9 @@ const getNewIndexDecode = (charIndex, shift) => {
   const indexShift = charIndex - shift;
   let newIndex;
   if (indexShift >= alp.length) {
-    newIndex = indexShift - alp.length;
+    newIndex = indexShift % alp.length;
   } else {
-    newIndex = indexShift >= 0 ? indexShift : alp.length - 1 - indexShift;
+    newIndex = indexShift >= 0 ? indexShift : alp.length + indexShift;
   }
   return newIndex;
 };
@@ -44,7 +44,7 @@ const getNewIndexEncode = (charIndex, shift) => {
   if (shift < 0) {
     newIndex = indexShift >= 0 ? indexShift : alp.length + indexShift;
   } else {
-    newIndex = indexShift >= alp.length ? indexShift - alp.length : indexShift;
+    newIndex = indexShift >= alp.length ? indexShift % alp.length : indexShift;
   }
   return newIndex;
 };
