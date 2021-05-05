@@ -26,8 +26,8 @@ For example: node caesar -s 18 -a encode
 
 Notes:
 1. Valid options are:  
-Required! -s/--shift - Shift value for encode or decode your message. Number should be a value  
-Required! -a/--action - "What to do with your message? Encode or decode should be a value"  
+Required! -s/--shift - Shift value for encode or decode your message. **Number** should be a value  
+Required! -a/--action - What to do with your message? **Encode** or **decode** should be a value  
 -i/--input - Path to an input file or name of an input file if it is located in caesar-cipher-cli-tool folder  
 -o/--output - Path to an output file or name of an output file - it means where an output file will be located after encode/decode and how it will be named  
 2. In this CLI Tool there are some prepared input files:  
