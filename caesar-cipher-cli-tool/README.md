@@ -36,6 +36,7 @@ Required! -a/--action - What to do with your message? **Encode** or **decode** s
 input.txt  
 encoded.txt  
 plain.txt  
+encodedNegative.txt  
 3. If you forget about --input argument you can write you message in the terminal line.
 4. If you forget about --output argument you will see encoded or decoded message in the terminal line.
 5. Only English letters will be encoded or decoded.  
