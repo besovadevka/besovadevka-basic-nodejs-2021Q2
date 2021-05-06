@@ -40,7 +40,7 @@ encodedNegative.txt
 3. If you forget about --input argument you can write you message in the terminal line.
 4. If you forget about --output argument you will see encoded or decoded message in the terminal line.
 5. Only English letters will be encoded or decoded.  
-6. Shift option maybe any digit - fractional/huge - does not matter matter.
+6. Shift option maybe any digit - fractional/huge - does not matter (if digit will be fractional - shift will be an integer part of a number: -s 4.9 => shift === 4).
 
 &nbsp;
 ##### For [The Rolling Scopes School](https://rs.school/) course with ♥
