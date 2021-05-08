@@ -49,7 +49,7 @@ const getNewIndexEncode = (charIndex, shift) => {
   return newIndex;
 };
 
-const codeMessage = (shift, str, code) => {
+const convertData = (shift, str, code) => {
   let res = "";
   for (let i = 0; i < str.length; i++) {
     const isCharLower = str[i].toLowerCase() === str[i];
@@ -69,4 +69,4 @@ const codeMessage = (shift, str, code) => {
   return res;
 };
 
-module.exports = codeMessage;
+module.exports = convertData;

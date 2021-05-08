@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { pipeline, Transform } = require("stream");
-const codeMessage = require("./codeInputFile");
+const convertData = require("./encryptData.js");
 
 const getReadStream = (path) => {
   if (path) {
@@ -24,7 +24,7 @@ const getTransformStream = (shiftValue, actionValue) => {
   return new Transform({
     transform(chunk, encoding, callback) {
       process.stdout.write("Data is written.\n");
-      this.push(codeMessage(shiftValue, chunk.toString(), actionValue));
+      this.push(convertData(shiftValue, chunk.toString(), actionValue));
       callback();
     },
   });

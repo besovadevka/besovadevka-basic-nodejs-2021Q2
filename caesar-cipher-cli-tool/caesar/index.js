@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const program = require("commander");
 const validateRequireArguments = require("./src/helpers/validation.js");
-const getProcessedData = require("./src/helpers/dataTransformation");
+const getProcessedData = require("./src/helpers/dataTransformation.js");
 
 program
   .option("-s --shift <value>", "Shift value for coding")
