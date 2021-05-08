@@ -1,7 +1,6 @@
 const fs = require("fs");
 const { pipeline, Transform } = require("stream");
 const codeMessage = require("./codeInputFile");
-const getArgsValue = require("./getArgsValues");
 
 const getReadStream = (path) => {
   if (path) {
@@ -39,13 +38,13 @@ const getWriteStream = (path) => {
   }
 };
 
-const getDataFromInputFile = () => {
+const getProcessedData = (
+  shiftValue,
+  actionValue,
+  pathName,
+  outputFileName
+) => {
   process.stdout.write("Welcome to CLI Caesar cipher!\n");
-  const pathName = getArgsValue("-i", "--input");
-  const outputFileName = getArgsValue("-o", "--output");
-  const shiftValue = getArgsValue("-s", "--shift");
-  const actionValue = getArgsValue("-a", "--action");
-
   pipeline(
     getReadStream(pathName),
     getTransformStream(shiftValue, actionValue),
@@ -59,4 +58,4 @@ const getDataFromInputFile = () => {
   );
 };
 
-module.exports = getDataFromInputFile;
+module.exports = getProcessedData;

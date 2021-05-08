@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const program = require("commander");
-const validateArguments = require("./src/helpers/validation.js");
-const getDataFromInputFile = require("./src/helpers/getDataFromInputFile");
+const validateRequireArguments = require("./src/helpers/validation.js");
+const getProcessedData = require("./src/helpers/dataTransformation");
 
 program
   .option("-s --shift <value>", "Shift value for coding")
@@ -10,6 +10,8 @@ program
   .option("-o, --output <value>", "An output file")
   .parse(process.argv);
 
-validateArguments(process.argv.slice(2));
+const { shift, action, input, output } = program.opts();
 
-getDataFromInputFile();
+validateRequireArguments(shift, action);
+
+getProcessedData(shift, action, input, output);
