@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 const validateShift = (shiftValue) => {
   if (!shiftValue) {
     process.stderr.write(
@@ -28,9 +30,16 @@ const validateAction = (actionValue) => {
   }
 };
 
+const validatePath = (path) => {
+  if (!fs.existsSync(path) && path) {
+    process.stderr.write("Error: no such file or directory!");
+    process.exit(9);
+  }
+};
+
 const validateRequireArguments = (shift, action) => {
   validateShift(shift);
   validateAction(action);
 };
 
-module.exports = validateRequireArguments;
+module.exports = { validateRequireArguments, validatePath };
