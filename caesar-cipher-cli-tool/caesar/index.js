@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require("commander");
-const validateRequireArguments = require("./src/helpers/validation.js");
+const { validateRequireArguments } = require("./src/helpers/validation.js");
 const getProcessedData = require("./src/helpers/dataTransformation.js");
 
 program

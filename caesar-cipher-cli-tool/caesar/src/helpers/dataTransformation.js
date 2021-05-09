@@ -1,15 +1,13 @@
 const fs = require("fs");
+const path = require("path");
 const { pipeline, Transform } = require("stream");
 const convertData = require("./encryptData.js");
+const { validatePath } = require("./validation.js");
 
-const getReadStream = (path) => {
-  if (path) {
-    const readStream = fs.createReadStream(path);
-    readStream.on("error", () => {
-      process.stderr.write("Error: no such file or directory!");
-      process.exit(9);
-    });
-    return readStream;
+const getReadStream = (inputPath) => {
+  if (inputPath) {
+    const readStreamFilePath = path.resolve(inputPath);
+    return fs.createReadStream(readStreamFilePath);
   } else {
     process.stdout.write("Enter message:\n");
     return process.stdin.on("data", () =>
@@ -30,9 +28,10 @@ const getTransformStream = (shiftValue, actionValue) => {
   });
 };
 
-const getWriteStream = (path) => {
-  if (path) {
-    return fs.createWriteStream(path, { flags: "a" });
+const getWriteStream = (outputPath) => {
+  if (outputPath) {
+    const writeStreamFilePath = path.resolve(outputPath);
+    return fs.createWriteStream(writeStreamFilePath, { flags: "a" });
   } else {
     return process.stdout;
   }
@@ -41,14 +40,17 @@ const getWriteStream = (path) => {
 const getProcessedData = (
   shiftValue,
   actionValue,
-  pathName,
-  outputFileName
+  inputPathName,
+  outputPathName
 ) => {
   process.stdout.write("Welcome to CLI Caesar cipher!\n");
+  validatePath(inputPathName);
+  validatePath(outputPathName);
+
   pipeline(
-    getReadStream(pathName),
+    getReadStream(inputPathName),
     getTransformStream(shiftValue, actionValue),
-    getWriteStream(outputFileName),
+    getWriteStream(outputPathName),
     (error) => {
       if (error) {
         process.stderr.write("Error: Something went wrong! Try again");
