@@ -33,11 +33,12 @@ Required! -s/--shift - Shift value for encode or decode your message. **Number**
 Required! -a/--action - What to do with your message? **Encode** or **decode** should be a value  
 -i/--input - Path to an input file or name of an input file if it is located in caesar-cipher-cli-tool folder  
 -o/--output - Path to an output file or name of an output file - it means where an output file will be located after encode/decode and how it will be named  
-2. In this CLI Tool there are some prepared input files:  
+2. In this CLI Tool there are some prepared files:  
 input.txt  
 encoded.txt  
 plain.txt  
 encodedNegative.txt  
+output.txt - an empty file  
 3. If you forget about --input argument you can write you message in the terminal line.
 4. If you forget about --output argument you will see encoded or decoded message in the terminal line.
 5. Only English letters will be encoded or decoded.  
