@@ -9,12 +9,13 @@ Know about [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher)!
 
 ### To check this CLI tool you need:  
 
-1. Clone or fork this repository  
+1. Clone this repository to your machine: 
 1.1 To clone write in the terminal:  
 git clone https://github.com/besovadevka/besovadevka-basic-nodejs-2021Q2.git  
+Then you need to checkout to caesar-cipher-cli-tool branch in the terminal:
+git checkout caesar-cipher-cli-tool
 1.2 You can also clone only the needed branch, just write in the terminal:  
-git clone https://github.com/besovadevka/besovadevka-basic-nodejs-2021Q2.git -b caesar-cipher-cli-tool  
-1.3 To fork press the fork button on Github.  
+git clone https://github.com/besovadevka/besovadevka-basic-nodejs-2021Q2.git -b caesar-cipher-cli-tool   
 2. Move to besovadevka-basic-nodejs-2021Q2 directory through the terminal:  
 cd besovadevka-basic-nodejs-2021Q2    
 3. Then move to the caesar-cipher-cli-tool directory:  
