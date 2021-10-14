@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-const programm = require("commander");
+const program = require("commander");
 const { validateRequireArguments } = require("./src/helpers/validation.js");
 const getProcessedData = require("./src/helpers/dataTransformation.js");
 
-programm
+program
   .option("-s --shift <value>", "Shift value for coding")
   .option("-a, --action <value>", "What to do? Encode/decode")
   .option("-i, --input <value>", "An input file")
   .option("-o, --output <value>", "An output file")
   .parse(process.argv);
 
-const { shift, action, input, output } = programm.opts();
+const { shift, action, input, output } = program.opts();
 
 validateRequireArguments(shift, action);
 
