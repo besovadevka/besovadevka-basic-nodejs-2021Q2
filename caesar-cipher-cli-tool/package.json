@@ -1,0 +1,21 @@
+{
+  "name": "caesar",
+  "version": "1.0.0",
+  "description": "Caesar cipher CLI tool for The RSS",
+  "main": "caesar/index.js",
+  "keywords": [
+    "CLI",
+    "Caesar",
+    "cipher",
+    "code",
+    "nodejs"
+  ],
+  "author": "Darya Tsimashenkava <@besovadevka>",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^7.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }
+}
